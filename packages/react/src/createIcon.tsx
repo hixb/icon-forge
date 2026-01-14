@@ -9,7 +9,6 @@ import { Icon } from './Icon'
 /**
  * Factory function to create icon components
  */
-
 export function createIcon(iconName: string, iconNode: IconNode) {
   const Component = forwardRef<SVGSVGElement, Omit<ReactIconProps, 'iconNode'>>(
     ({ className, ...props }, ref) => {
