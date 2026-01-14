@@ -19,5 +19,4 @@ export interface IconProps {
   color?: string
   strokeWidth?: string | number
   className?: string
-  style?: Record<string, any>
 }
