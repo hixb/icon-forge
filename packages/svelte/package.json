@@ -1,5 +1,5 @@
 {
-  "name": "@icon-forge/svelte",
+  "name": "@dawnice/icon-forge-svelte",
   "version": "1.0.0",
   "description": "Svelte components for icon-forge",
   "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
@@ -49,7 +49,7 @@
     "svelte": "^4.0.0"
   },
   "dependencies": {
-    "@icon-forge/core": "workspace:*"
+    "@dawnice/icon-forge-core": "workspace:*"
   },
   "devDependencies": {
     "svelte": "^4.0.0",

@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [svelte()],
   resolve: {
     alias: {
-      '@icon-forge/svelte': path.resolve(__dirname, '../../packages/svelte/src'),
+      '@dawnice/icon-forge-svelte': path.resolve(__dirname, '../../packages/svelte/src'),
     },
   },
 })

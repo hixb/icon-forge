@@ -16,7 +16,7 @@ importers:
         version: 2.29.8(@types/node@25.0.8)
       '@testing-library/react':
         specifier: ^16.3.1
-        version: 16.3.1(@testing-library/dom@10.4.1)(react-dom@18.3.1)(react@18.3.1)
+        version: 16.3.1(@testing-library/dom@10.4.1)(@types/react@19.2.8)(react-dom@19.2.3)(react@19.2.3)
       '@testing-library/svelte':
         specifier: ^5.3.1
         version: 5.3.1(svelte@4.2.20)(vitest@4.0.17)
@@ -53,7 +53,7 @@ importers:
 
   packages/cli:
     dependencies:
-      '@icon-forge/core':
+      '@dawnice/icon-forge-core':
         specifier: workspace:*
         version: link:../core
       chalk:
@@ -102,7 +102,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@icon-forge/core':
+      '@dawnice/icon-forge-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -136,7 +136,7 @@ importers:
 
   packages/svelte:
     dependencies:
-      '@icon-forge/core':
+      '@dawnice/icon-forge-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -152,7 +152,7 @@ importers:
 
   packages/vue:
     dependencies:
-      '@icon-forge/core':
+      '@dawnice/icon-forge-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -1605,27 +1605,6 @@ packages:
       '@types/react': 19.2.8
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
-    dev: true
-
-  /@testing-library/react@16.3.1(@testing-library/dom@10.4.1)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-gr4KtAWqIOQoucWYD/f6ki+j5chXfcPc74Col/6poTyqTmn7zRmodWahWRCp8tYd+GMqBonw6hstNzqjbs6gjw==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      '@testing-library/dom': ^10.0.0
-      '@types/react': ^18.0.0 || ^19.0.0
-      '@types/react-dom': ^18.0.0 || ^19.0.0
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      '@types/react-dom':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.28.6
-      '@testing-library/dom': 10.4.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
     dev: true
 
   /@testing-library/svelte-core@1.0.0(svelte@4.2.20):
@@ -4289,13 +4268,6 @@ packages:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
     dev: true
 
-  /loose-envify@1.4.0:
-    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
-    hasBin: true
-    dependencies:
-      js-tokens: 4.0.0
-    dev: true
-
   /lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
     dev: true
@@ -5205,16 +5177,6 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
-  /react-dom@18.3.1(react@18.3.1):
-    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
-    peerDependencies:
-      react: ^18.3.1
-    dependencies:
-      loose-envify: 1.4.0
-      react: 18.3.1
-      scheduler: 0.23.2
-    dev: true
-
   /react-dom@19.2.3(react@19.2.3):
     resolution: {integrity: sha512-yELu4WmLPw5Mr/lmeEpox5rw3RETacE++JgHqQzd2dg+YbJuat3jH4ingc+WPZhxaoFzdv9y33G+F7Nl5O0GBg==}
     peerDependencies:
@@ -5231,13 +5193,6 @@ packages:
   /react-refresh@0.18.0:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  /react@18.3.1:
-    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      loose-envify: 1.4.0
     dev: true
 
   /react@19.2.3:
@@ -5440,12 +5395,6 @@ packages:
     engines: {node: '>=v12.22.7'}
     dependencies:
       xmlchars: 2.2.0
-    dev: true
-
-  /scheduler@0.23.2:
-    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
-    dependencies:
-      loose-envify: 1.4.0
     dev: true
 
   /scheduler@0.27.0:

@@ -6,4 +6,4 @@ export { Icon } from './Icon'
 export type { VueIconProps } from './Icon'
 
 // Re-export from core
-export type { IconNode, IconProps } from '@icon-forge/core'
+export type { IconNode, IconProps } from '@dawnice/icon-forge-core'

@@ -1,4 +1,4 @@
-import type { IconNode } from '@icon-forge/core'
+import type { IconNode } from '@dawnice/icon-forge-core'
 
 /**
  * Generate Vue component code
@@ -13,8 +13,8 @@ export function generateVueComponent(componentName: string, iconNode: IconNode, 
 
 <script${scriptLang}>
 import { defineComponent } from 'vue';
-import { Icon } from '@icon-forge/vue';
-${typescript ? 'import type { IconNode } from \'@icon-forge/core\';\n' : ''}
+import { Icon } from '@dawnice/icon-forge-vue';
+${typescript ? 'import type { IconNode } from \'@dawnice/icon-forge-core\';\n' : ''}
 export default defineComponent({
   name: '${componentName}',
   components: { Icon },

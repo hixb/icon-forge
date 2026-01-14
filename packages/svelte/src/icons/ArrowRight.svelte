@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Icon } from '@icon-forge/svelte';
-  import type { IconNode } from '@icon-forge/core';
+  import { Icon } from '@dawnice/icon-forge-svelte';
+  import type { IconNode } from '@dawnice/icon-forge-core';
 
   const iconNode: IconNode = [
   [

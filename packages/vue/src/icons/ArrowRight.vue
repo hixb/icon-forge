@@ -4,8 +4,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { Icon } from '@icon-forge/vue';
-import type { IconNode } from '@icon-forge/core';
+import { Icon } from '@dawnice/icon-forge-vue';
+import type { IconNode } from '@dawnice/icon-forge-core';
 
 export default defineComponent({
   name: 'ArrowRight',

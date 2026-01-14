@@ -1,4 +1,4 @@
-import type { IconNode } from '@icon-forge/core'
+import type { IconNode } from '@dawnice/icon-forge-core'
 import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { Icon } from '../Icon'

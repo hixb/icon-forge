@@ -1,4 +1,4 @@
-import type { IconNode } from '@icon-forge/core'
+import type { IconNode } from '@dawnice/icon-forge-core'
 import IconComponent from './Icon.svelte'
 
 /**

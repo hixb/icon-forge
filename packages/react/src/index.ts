@@ -9,4 +9,4 @@ export type { ReactIconProps } from './Icon'
 export * from './icons'
 
 // Re-export from core
-export type { IconNode, IconProps } from '@icon-forge/core'
+export type { IconNode, IconProps } from '@dawnice/icon-forge-core'

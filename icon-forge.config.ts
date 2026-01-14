@@ -1,4 +1,4 @@
-import { defineConfig } from '@icon-forge/cli'
+import { defineConfig } from '@dawnice/icon-forge-cli'
 
 export default defineConfig({
   // Framework

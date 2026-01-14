@@ -1,4 +1,4 @@
-import type { IconNode } from '@icon-forge/core'
+import type { IconNode } from '@dawnice/icon-forge-core'
 import { createIcon } from '../createIcon'
 
 export const iconNode: IconNode = [

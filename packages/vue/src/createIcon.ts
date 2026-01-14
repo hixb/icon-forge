@@ -1,6 +1,6 @@
-import type { IconNode } from '@icon-forge/core'
+import type { IconNode } from '@dawnice/icon-forge-core'
 import type { PropType } from 'vue'
-import { mergeClasses, toKebabCase } from '@icon-forge/core'
+import { mergeClasses, toKebabCase } from '@dawnice/icon-forge-core'
 import { defineComponent, h } from 'vue'
 import { Icon } from './Icon'
 

@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@icon-forge/vue": "link:../../packages/vue",
+    "@dawnice/icon-forge-vue": "link:../../packages/vue",
     "vue": "^3.5.24"
   },
   "devDependencies": {

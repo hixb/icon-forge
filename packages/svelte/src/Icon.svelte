@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { IconNode } from '@icon-forge/core';
-  import { mergeClasses } from '@icon-forge/core';
+  import type { IconNode } from '@dawnice/icon-forge-core';
+  import { mergeClasses } from '@dawnice/icon-forge-core';
 
   export let iconNode: IconNode | undefined = undefined;
   export let size: string | number = 24;

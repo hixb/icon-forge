@@ -1,6 +1,6 @@
-import type { IconNode, IconProps } from '@icon-forge/core'
+import type { IconNode, IconProps } from '@dawnice/icon-forge-core'
 import type { PropType } from 'vue'
-import { mergeClasses } from '@icon-forge/core'
+import { mergeClasses } from '@dawnice/icon-forge-core'
 import { defineComponent, h } from 'vue'
 
 export interface VueIconProps extends IconProps {

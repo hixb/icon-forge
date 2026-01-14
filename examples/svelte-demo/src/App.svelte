@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ArrowRight from '@icon-forge/svelte/icons/ArrowRight.svelte';
+  import ArrowRight from '@dawnice/icon-forge-svelte/icons/ArrowRight.svelte';
 </script>
 
 <main>

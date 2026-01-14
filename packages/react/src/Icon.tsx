@@ -1,8 +1,8 @@
 'use client'
 
-import type { IconNode, IconProps } from '@icon-forge/core'
+import type { IconNode, IconProps } from '@dawnice/icon-forge-core'
 import type React from 'react'
-import { mergeClasses } from '@icon-forge/core'
+import { mergeClasses } from '@dawnice/icon-forge-core'
 import { createElement, forwardRef } from 'react'
 
 export interface ReactIconProps extends IconProps, Omit<React.SVGAttributes<SVGSVGElement>, 'color'> {

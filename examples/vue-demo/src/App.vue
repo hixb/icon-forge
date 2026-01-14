@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowRight } from '@icon-forge/vue/icons';
+import { ArrowRight } from '@dawnice/icon-forge-vue/icons';
 </script>
 
 <style scoped>

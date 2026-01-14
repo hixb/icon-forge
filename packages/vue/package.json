@@ -1,5 +1,5 @@
 {
-  "name": "@icon-forge/vue",
+  "name": "@dawnice/icon-forge-vue",
   "version": "1.0.0",
   "description": "Vue components for icon-forge",
   "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
@@ -48,7 +48,7 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "@icon-forge/core": "workspace:*"
+    "@dawnice/icon-forge-core": "workspace:*"
   },
   "devDependencies": {
     "@vue/runtime-core": "^3.3.0",

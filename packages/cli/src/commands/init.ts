@@ -84,7 +84,7 @@ export async function initCommand(options: InitOptions) {
   ])
 
   // Generate configuration file content
-  const configContent = `import { defineConfig } from '@icon-forge/cli';
+  const configContent = `import { defineConfig } from '@dawnice/icon-forge-cli';
 
 export default defineConfig({
   // Framework

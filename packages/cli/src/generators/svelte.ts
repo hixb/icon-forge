@@ -1,4 +1,4 @@
-import type { IconNode } from '@icon-forge/core'
+import type { IconNode } from '@dawnice/icon-forge-core'
 
 /**
  * Generate Svelte component code
@@ -8,8 +8,8 @@ export function generateSvelteComponent(componentName: string, iconNode: IconNod
   const iconNodeStr = JSON.stringify(iconNode, null, 2)
 
   return `<script${scriptLang}>
-  import { Icon } from '@icon-forge/svelte';
-  ${typescript ? 'import type { IconNode } from \'@icon-forge/core\';\n' : ''}
+  import { Icon } from '@dawnice/icon-forge-svelte';
+  ${typescript ? 'import type { IconNode } from \'@dawnice/icon-forge-core\';\n' : ''}
   const iconNode${typescript ? ': IconNode' : ''} = ${iconNodeStr};
 </script>
 

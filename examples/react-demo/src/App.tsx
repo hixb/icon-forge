@@ -1,4 +1,4 @@
-import { ArrowRight } from '@icon-forge/react'
+import { ArrowRight } from '@dawnice/icon-forge-react'
 import './App.css'
 
 export default function App() {

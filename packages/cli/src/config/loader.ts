@@ -30,8 +30,8 @@ export async function loadConfig(configPath: string): Promise<IconForgeConfig> {
       moduleCache: false,
       requireCache: false,
       alias: {
-        // Map @icon-forge/cli to config-helper to avoid circular dependency
-        '@icon-forge/cli': configHelperPath,
+        // Map @dawnice/icon-forge-cli to config-helper to avoid circular dependency
+        '@dawnice/icon-forge-cli': configHelperPath,
       },
     })
 
