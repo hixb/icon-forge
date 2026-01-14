@@ -18,6 +18,28 @@ export interface IconForgeConfig {
   framework: 'react' | 'vue' | 'svelte'
 
   /**
+   * Config file directory relative to project root
+   *
+   * @remarks
+   * Specifies where the config file is located relative to the project root.
+   * This is used to resolve relative paths in input/output correctly.
+   * - Use '.' if config is in the project root
+   * - Use '../..' if config is in a subdirectory like 'config/icons'
+   *
+   * @default '.'
+   *
+   * @example
+   * ```typescript
+   * // Config at project-root/icon-forge.config.ts
+   * { configDir: '.' }
+   *
+   * // Config at project-root/config/icons.config.ts
+   * { configDir: '../..' }
+   * ```
+   */
+  configDir?: string
+
+  /**
    * Input directory containing SVG files
    *
    * @remarks

@@ -4,6 +4,10 @@ export default defineConfig({
   // Framework
   framework: 'react',
 
+  // Config file directory (used to resolve relative paths)
+  // Leave as '.' if config is in project root
+  configDir: '.',
+
   // Input directory for SVG files
   input: './icons',
 

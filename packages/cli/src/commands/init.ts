@@ -7,10 +7,28 @@ import ora from 'ora'
 
 interface InitOptions {
   force?: boolean
+  config?: string
 }
 
 export async function initCommand(options: InitOptions) {
-  const configPath = path.join(process.cwd(), 'icon-forge.config.ts')
+  // Interactive Q&A for config path first
+  const pathAnswers = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'configPath',
+      message: 'Where should we create the config file?',
+      default: options.config || './icon-forge.config.ts',
+      validate: (input: string) => {
+        if (!input.endsWith('.ts') && !input.endsWith('.js')) {
+          return 'Config file must have .ts or .js extension'
+        }
+        return true
+      },
+    },
+  ])
+
+  const configPath = path.resolve(process.cwd(), pathAnswers.configPath)
+  const configDir = path.dirname(configPath)
   const spinner = ora()
 
   // Check if the configuration file already exists
@@ -83,12 +101,19 @@ export async function initCommand(options: InitOptions) {
     },
   ])
 
+  // Calculate relative path from config file to project root
+  const relativeConfigDir = path.relative(configDir, process.cwd()) || '.'
+
   // Generate configuration file content
   const configContent = `import { defineConfig } from '@dawnice/icon-forge-cli';
 
 export default defineConfig({
   // Framework
   framework: '${answers.framework}',
+
+  // Config file directory (used to resolve relative paths)
+  // Leave as '.' if config is in project root, or set to relative path to root
+  configDir: '${relativeConfigDir === '.' ? '.' : relativeConfigDir}',
 
   // Input directory for SVG files
   input: '${answers.input}',
@@ -128,24 +153,27 @@ export default defineConfig({
   spinner.start('Creating configuration file...')
 
   try {
+    // Ensure config directory exists
+    await fs.mkdir(configDir, { recursive: true })
+
     // Write to configuration file
     await fs.writeFile(configPath, configContent, 'utf-8')
-    spinner.succeed(chalk.green('✅ Configuration file created: icon-forge.config.ts'))
+    spinner.succeed(chalk.green(`✅ Configuration file created: ${path.relative(process.cwd(), configPath)}`))
 
-    // Create input directory
-    const inputDir = path.resolve(process.cwd(), answers.input)
+    // Create input directory (relative to config file location)
+    const inputDir = path.resolve(configDir, relativeConfigDir, answers.input)
     await fs.mkdir(inputDir, { recursive: true })
     console.log(chalk.green(`✅ Created directory: ${answers.input}`))
 
-    // Create output directory
-    const outputDir = path.resolve(process.cwd(), answers.output)
+    // Create output directory (relative to config file location)
+    const outputDir = path.resolve(configDir, relativeConfigDir, answers.output)
     await fs.mkdir(outputDir, { recursive: true })
     console.log(chalk.green(`✅ Created directory: ${answers.output}`))
 
     // Success prompt
     console.log(chalk.bold.green('\n🎉 All set! Now you can:\n'))
     console.log(chalk.cyan(`   1. Add your SVG files to ${answers.input}`))
-    console.log(chalk.cyan('   2. Run: npx icon-forge generate\n'))
+    console.log(chalk.cyan(`   2. Run: npx icon-forge generate ${pathAnswers.configPath !== './icon-forge.config.ts' ? `--config ${pathAnswers.configPath}` : ''}\n`))
   }
   catch (error) {
     spinner.fail(chalk.red('Failed to create configuration'))

@@ -1,14 +1,15 @@
 import type { IconForgeConfig } from './types'
-import { createJiti } from 'jiti'
-import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import process from 'node:process'
+import { fileURLToPath } from 'node:url'
+import { createJiti } from 'jiti'
 
 /**
  * Loading configuration file
  */
 export async function loadConfig(configPath: string): Promise<IconForgeConfig> {
   const absolutePath = path.resolve(process.cwd(), configPath)
+  const configDir = path.dirname(absolutePath)
 
   try {
     // Determine the config-helper path to avoid circular dependency
@@ -36,8 +37,24 @@ export async function loadConfig(configPath: string): Promise<IconForgeConfig> {
     })
 
     const config = jiti(absolutePath)
+    const loadedConfig = Array.isArray(config) ? config[0] : config
 
-    return Array.isArray(config) ? config[0] : config
+    // Resolve paths relative to config file location
+    if (loadedConfig.configDir) {
+      // Config file is in a subdirectory, resolve paths relative to project root
+      const projectRoot = path.resolve(configDir, loadedConfig.configDir)
+
+      // Resolve input and output paths relative to project root
+      loadedConfig.input = path.resolve(projectRoot, loadedConfig.input)
+      loadedConfig.output = path.resolve(projectRoot, loadedConfig.output)
+    }
+    else {
+      // Config file is in project root, resolve paths relative to config directory
+      loadedConfig.input = path.resolve(configDir, loadedConfig.input)
+      loadedConfig.output = path.resolve(configDir, loadedConfig.output)
+    }
+
+    return loadedConfig
   }
   catch (error: any) {
     throw new Error(`Failed to load configuration from ${configPath}: ${error.message}`)
