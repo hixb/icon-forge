@@ -158,8 +158,10 @@ export async function generateCommand(options: GenerateOptions) {
       const indexExtension = config.typescript ? '.ts' : '.js'
       const indexContent = `${exports
         .map((name) => {
+          // For React, don't include extension in imports (TypeScript will resolve it)
+          // For Vue and Svelte, include extension as they use SFC
           const ext = config.framework === 'react'
-            ? (config.typescript ? '.tsx' : '.jsx')
+            ? ''
             : config.framework === 'vue'
               ? '.vue'
               : '.svelte'

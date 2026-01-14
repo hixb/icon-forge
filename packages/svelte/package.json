@@ -1,0 +1,36 @@
+{
+  "name": "@icon-forge/svelte",
+  "version": "1.0.0",
+  "description": "Svelte components for icon-forge",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "svelte": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "svelte": "./src/index.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./icons": "./src/icons/index.ts",
+    "./icons/*": "./src/icons/*.svelte"
+  },
+  "files": ["dist", "src"],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --external svelte",
+    "dev": "tsup src/index.ts --format cjs,esm --external svelte --watch",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "svelte": "^4.0.0"
+  },
+  "dependencies": {
+    "@icon-forge/core": "workspace:*"
+  },
+  "devDependencies": {
+    "svelte": "^4.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}

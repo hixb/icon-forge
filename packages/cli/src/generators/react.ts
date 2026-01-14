@@ -10,8 +10,8 @@ export function generateReactComponent(componentName: string, iconNode: IconNode
 
   const iconNodeStr = JSON.stringify(iconNode, null, 2)
 
-  return `import { createIcon } from '@icon-forge/react'
-${typeImport}
+  return `${typeImport}import { createIcon } from '../createIcon'
+
 export const iconNode${typescript ? ': IconNode' : ''} = ${iconNodeStr}
 
 const ${componentName} = createIcon('${componentName}', iconNode)

@@ -1,8 +1,8 @@
 import type { IconForgeConfig } from './types'
+import { createJiti } from 'jiti'
+import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import process from 'node:process'
-import { fileURLToPath } from 'node:url'
-import { createJiti } from 'jiti'
 
 /**
  * Loading configuration file
@@ -11,17 +11,17 @@ export async function loadConfig(configPath: string): Promise<IconForgeConfig> {
   const absolutePath = path.resolve(process.cwd(), configPath)
 
   try {
-    // Determine the CLI package path for alias resolution
+    // Determine the config-helper path to avoid circular dependency
     // Handle both ESM and CJS contexts
-    let cliPackageDir: string
+    let configHelperPath: string
     if (typeof __dirname !== 'undefined') {
-      // CommonJS context
-      cliPackageDir = path.resolve(__dirname, '..')
+      // CommonJS context - __dirname is in dist/ directory
+      configHelperPath = path.resolve(__dirname, 'config-helper.js')
     }
     else {
       // ESM context
       const currentFile = fileURLToPath(import.meta.url)
-      cliPackageDir = path.resolve(path.dirname(currentFile), '..')
+      configHelperPath = path.resolve(path.dirname(currentFile), 'config-helper.mjs')
     }
 
     // Use jiti to load TypeScript config files
@@ -30,7 +30,8 @@ export async function loadConfig(configPath: string): Promise<IconForgeConfig> {
       moduleCache: false,
       requireCache: false,
       alias: {
-        '@icon-forge/cli': cliPackageDir,
+        // Map @icon-forge/cli to config-helper to avoid circular dependency
+        '@icon-forge/cli': configHelperPath,
       },
     })
 

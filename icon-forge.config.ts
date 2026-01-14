@@ -1,12 +1,14 @@
-export default {
+import { defineConfig } from '@icon-forge/cli'
+
+export default defineConfig({
   // Framework
-  framework: 'vue',
+  framework: 'react',
 
   // Input directory for SVG files
   input: './icons',
 
   // Output directory for generated components
-  output: './packages/vue/src/icons',
+  output: './packages/react/src/icons',
 
   // Generate TypeScript files
   typescript: true,
@@ -33,4 +35,4 @@ export default {
   //   afterGenerate: async (code) => code,
   //   onComplete: async (stats) => console.log(stats),
   // },
-}
+})
