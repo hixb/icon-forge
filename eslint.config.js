@@ -1,7 +1,9 @@
+import antfu from '@antfu/eslint-config'
+
 export default antfu(
-    {
-        type: 'lib',
-        ignores: ['netlify.toml'],
-        pnpm: true,
-    },
+  {
+    type: 'lib',
+    ignores: ['netlify.toml'],
+    pnpm: true,
+  },
 )
