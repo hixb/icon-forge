@@ -41,7 +41,11 @@
       "import": "./dist/index.js"
     }
   },
-  "files": ["LICENSE", "README.md", "dist"],
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
@@ -49,6 +53,7 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
+    "build:icons": "tsx scripts/build-icons.ts",
     "test": "turbo run test",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
@@ -60,6 +65,7 @@
     "@types/node": "^25.0.8",
     "eslint": "^9.39.2",
     "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
     "turbo": "^2.7.4",
     "typescript": "^5.9.3",
     "vitest": "^4.0.17"
