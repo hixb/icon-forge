@@ -1,6 +1,6 @@
 {
   "name": "@dawnice/icon-forge-svelte",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Svelte components for icon-forge",
   "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
   "license": "MIT",
@@ -36,7 +36,10 @@
     "./icons": "./src/icons/index.ts",
     "./icons/*": "./src/icons/*.svelte"
   },
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "engines": {
     "node": ">=18.0.0"
   },
