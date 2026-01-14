@@ -5,11 +5,13 @@ on:
     branches:
       - main
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
 
 jobs:
   release:
-    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -33,10 +35,8 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Create Release Pull Request or Publish
-        id: changesets
         uses: changesets/action@v1
         with:
           publish: pnpm changeset publish --access public
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
