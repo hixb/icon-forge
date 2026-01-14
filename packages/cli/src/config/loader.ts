@@ -1,6 +1,7 @@
 import type { IconForgeConfig } from './types'
 import path from 'node:path'
 import process from 'node:process'
+import { fileURLToPath } from 'node:url'
 import { createJiti } from 'jiti'
 
 /**
@@ -10,12 +11,27 @@ export async function loadConfig(configPath: string): Promise<IconForgeConfig> {
   const absolutePath = path.resolve(process.cwd(), configPath)
 
   try {
+    // Determine the CLI package path for alias resolution
+    // Handle both ESM and CJS contexts
+    let cliPackageDir: string
+    if (typeof __dirname !== 'undefined') {
+      // CommonJS context
+      cliPackageDir = path.resolve(__dirname, '..')
+    }
+    else {
+      // ESM context
+      const currentFile = fileURLToPath(import.meta.url)
+      cliPackageDir = path.resolve(path.dirname(currentFile), '..')
+    }
+
     // Use jiti to load TypeScript config files
-    // Use process.cwd() as the base to resolve workspace dependencies correctly
     const jiti = createJiti(process.cwd(), {
       interopDefault: true,
       moduleCache: false,
       requireCache: false,
+      alias: {
+        '@icon-forge/cli': cliPackageDir,
+      },
     })
 
     const config = jiti(absolutePath)
