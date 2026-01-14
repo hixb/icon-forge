@@ -1,7 +1,8 @@
 {
-  "name": "@dawnice/icon-forge",
+  "name": "icon-forge",
   "type": "module",
-  "version": "0.0.1",
+  "version": "2.1.0",
+  "private": true,
   "packageManager": "pnpm@8.15.0",
   "description": "A flexible, multi-framework icon library",
   "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
