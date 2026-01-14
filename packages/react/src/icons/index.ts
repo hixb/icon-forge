@@ -1,1 +1,1 @@
-export { default as ArrowRight } from './ArrowRight'
+export { default as ArrowRight } from './ArrowRight.tsx';
