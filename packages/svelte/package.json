@@ -2,6 +2,26 @@
   "name": "@icon-forge/svelte",
   "version": "1.0.0",
   "description": "Svelte components for icon-forge",
+  "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/hixb/icon-forge#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hixb/icon-forge.git",
+    "directory": "packages/svelte"
+  },
+  "bugs": "https://github.com/hixb/icon-forge/issues",
+  "keywords": [
+    "icon",
+    "icons",
+    "icon-library",
+    "svelte",
+    "svelte-components",
+    "svg",
+    "svg-icons",
+    "typescript"
+  ],
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -17,6 +37,9 @@
     "./icons/*": "./src/icons/*.svelte"
   },
   "files": ["dist", "src"],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --external svelte",
     "dev": "tsup src/index.ts --format cjs,esm --external svelte --watch",

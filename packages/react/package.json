@@ -2,6 +2,26 @@
   "name": "@icon-forge/react",
   "version": "1.0.0",
   "description": "React components for icon-forge",
+  "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/hixb/icon-forge#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hixb/icon-forge.git",
+    "directory": "packages/react"
+  },
+  "bugs": "https://github.com/hixb/icon-forge/issues",
+  "keywords": [
+    "icon",
+    "icons",
+    "icon-library",
+    "react",
+    "react-components",
+    "svg",
+    "svg-icons",
+    "typescript"
+  ],
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -15,6 +35,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --external react",
     "dev": "tsup src/index.ts --format cjs,esm --dts --external react --watch",

@@ -2,6 +2,27 @@
   "name": "@icon-forge/cli",
   "version": "1.0.0",
   "description": "CLI tool for icon-forge",
+  "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/hixb/icon-forge#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hixb/icon-forge.git",
+    "directory": "packages/cli"
+  },
+  "bugs": "https://github.com/hixb/icon-forge/issues",
+  "keywords": [
+    "icon",
+    "icons",
+    "icon-library",
+    "svg",
+    "svg-icons",
+    "svg-to-component",
+    "icon-generator",
+    "icon-cli",
+    "cli",
+    "typescript"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
@@ -11,6 +32,9 @@
     "bin",
     "dist"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsup src/index.ts src/config-helper.ts --format cjs,esm --dts",
     "dev": "tsup src/index.ts src/config-helper.ts --format cjs,esm --dts --watch",

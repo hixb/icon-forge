@@ -1,29 +1,63 @@
-# icon-forge
+# Icon Forge
 
-A flexible, multi-framework icon library with built-in presets and custom SVG support.
+A flexible, multi-framework icon library with CLI support.
 
 ## Features
 
-- 🎨 **Built-in Icon Library**: 1000+ preset icons
-- 🔧 **Custom Icons**: Process your own SVG files
-- ⚡ **Multi-Framework**: React, Vue, Svelte support
-- 📦 **Tree-shakeable**: Import only what you need
-- 🎯 **TypeScript**: Full type definitions
-- 🛠️ **CLI Tool**: Generate icons from SVG files
-- 🎭 **Multiple Import Styles**: Named, dynamic, namespace
+- 🎨 Multi-framework support (React, Vue, Svelte)
+- 🚀 TypeScript first
+- 📦 Tree-shakeable
+- 🛠️ CLI tool for generating custom icons
+- ⚡ Fast and lightweight
 
 ## Installation
 
+### React
+
 ```bash
-# React
 npm install @icon-forge/react
-
-# Vue
-npm install @icon-forge/vue
-
-# Svelte
-npm install @icon-forge/svelte
-
-# CLI (optional)
-npm install -D @icon-forge/cli
 ```
+
+### Vue
+
+```bash
+npm install @icon-forge/vue
+```
+
+### Svelte
+
+```bash
+npm install @icon-forge/svelte
+```
+
+## Usage
+
+### React
+
+```tsx
+import { ArrowRight } from '@icon-forge/react';
+
+function App() {
+return <ArrowRight size={24} color="blue" />;
+}
+```
+
+### CLI Tool
+
+```bash
+# Install CLI
+npm install -D @icon-forge/cli
+
+# Initialize configuration
+npx icon-forge init
+
+# Generate icons from SVG files
+npx icon-forge generate
+
+# Watch mode
+npx icon-forge watch
+```
+
+## License
+
+MIT

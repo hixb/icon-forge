@@ -2,6 +2,24 @@
   "name": "@icon-forge/core",
   "version": "1.0.0",
   "description": "Core utilities for icon-forge",
+  "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/hixb/icon-forge#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hixb/icon-forge.git",
+    "directory": "packages/core"
+  },
+  "bugs": "https://github.com/hixb/icon-forge/issues",
+  "keywords": [
+    "icon",
+    "icons",
+    "icon-library",
+    "svg",
+    "utilities",
+    "typescript"
+  ],
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -13,6 +31,9 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": ["dist"],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",

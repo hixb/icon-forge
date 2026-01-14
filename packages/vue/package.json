@@ -2,6 +2,27 @@
   "name": "@icon-forge/vue",
   "version": "1.0.0",
   "description": "Vue components for icon-forge",
+  "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/hixb/icon-forge#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hixb/icon-forge.git",
+    "directory": "packages/vue"
+  },
+  "bugs": "https://github.com/hixb/icon-forge/issues",
+  "keywords": [
+    "icon",
+    "icons",
+    "icon-library",
+    "vue",
+    "vue-components",
+    "vue3",
+    "svg",
+    "svg-icons",
+    "typescript"
+  ],
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -15,6 +36,9 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": ["dist", "src"],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --external vue",
     "dev": "tsup src/index.ts --format cjs,esm --dts --external vue --watch",
