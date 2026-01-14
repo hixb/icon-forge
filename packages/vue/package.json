@@ -1,6 +1,6 @@
 {
   "name": "@dawnice/icon-forge-vue",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Vue components for icon-forge",
   "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
   "license": "MIT",
@@ -35,7 +35,10 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "engines": {
     "node": ">=18.0.0"
   },

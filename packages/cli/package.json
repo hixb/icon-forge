@@ -1,6 +1,6 @@
 {
   "name": "@dawnice/icon-forge-cli",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "CLI tool for icon-forge",
   "author": "Xiaobing Zhu <hellozxb252@gmail.com>",
   "license": "MIT",
