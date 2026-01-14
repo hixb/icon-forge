@@ -1,5 +1,11 @@
 # @dawnice/icon-forge-core
 
+## 2.4.0
+
+### Minor Changes
+
+- ec6540f: chore(ci): update workflow
+
 ## 2.2.0
 
 ### Minor Changes
